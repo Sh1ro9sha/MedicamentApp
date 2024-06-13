@@ -1,0 +1,155 @@
+﻿@model MedicamentApp.ViewModels.RegisterViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="@Url.Content("~/css/reg.css")">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif; 
+            background-color: #FCE883; 
+            color: #333;
+            height: 100vh;
+            margin: 0;
+            background-image: url('/images/3.jpg'); 
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: flex-start; 
+            align-items: center;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #FF8C69; 
+            margin-bottom: 20px;
+            font-family: 'Arial Black', sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row; 
+            align-items: flex-start;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .register-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+            .register-container div {
+                margin-bottom: 20px;
+                width: 100%;
+            }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #FF8C69; 
+            font-weight: 500;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #FF8C69;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-top: 5px;
+        }
+
+        .button {
+            width: 100%;
+            padding: 15px;
+            background-color: #FF8C69; 
+            border: none;
+            border-radius: 25px;
+            color: #FFF;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-family: 'Arial Black', sans-serif;
+        }
+
+            .button:hover {
+                background-color: #E07A57; 
+            }
+
+        .button-secondary {
+            background-color: #FF8C69; 
+            color: #FFF;
+            border-radius: 25px;
+            font-family: 'Arial Black', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 20px;
+            margin-left: 20px; 
+            height: fit-content; 
+        }
+
+            .button-secondary:hover {
+                background-color: #E07A57;
+            }
+
+        .validation-message {
+            color: #FF8C69; 
+            font-size: 12px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="register-container">
+            <h2>Регистрация</h2>
+            <form asp-action="Register" method="post" style="width: 100%;">
+                <div>
+                    <label asp-for="Login">Login:</label>
+                    <input asp-for="Login" />
+                    <span class="validation-message" asp-validation-for="Login"></span>
+                </div>
+                <div>
+                    <label asp-for="Password">Password:</label>
+                    <input asp-for="Password" type="password" />
+                    <span class="validation-message" asp-validation-for="Password"></span>
+                </div>
+                <div>
+                    <label asp-for="ConfirmPassword">Confirm Password:</label>
+                    <input asp-for="ConfirmPassword" type="password" />
+                    <span class="validation-message" asp-validation-for="ConfirmPassword"></span>
+                </div>
+                <div>
+                    <label asp-for="RoleCode">Role Code:</label>
+                    <input asp-for="RoleCode" />
+                    <span class="validation-message" asp-validation-for="RoleCode"></span>
+                </div>
+                <div>
+                    <label asp-for="AccountCode">Account Code:</label>
+                    <input asp-for="AccountCode" />
+                    <span class="validation-message" asp-validation-for="AccountCode"></span>
+                </div>
+                <div>
+                    <button type="submit" class="button">Зарегистрироваться</button>
+                </div>
+            </form>
+        </div>
+        <form method="get" action="/Home/Index" style="display: flex; margin-top: 450px;">
+            <button type="submit" class="button button-secondary">Вернуться на главную</button>
+        </form>
+    </div>
+</body>
+</html>

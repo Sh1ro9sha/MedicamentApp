@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/styles.css"> 
+</head>
+<body>
+
+    <div class="header-container" style="text-align: center; /* Выравнивание по центру */
+    padding: 20px; /* Внутренний отступ */
+    color: #474A51; /* Серый цвет текста */
+    font-family: 'Times New Roman', serif; /* Шрифт */
+    font-size: 25px; /* Увеличенный размер текста */
+    background: linear-gradient(to right, #FF8C69, #474A51); /* Градиент рыжий-серый */
+    position: fixed; /* Фиксированная позиция */
+    width: 100%; /* Ширина на всю страницу */
+    z-index: 999; /* Зависит над остальным контентом */">
+        @RenderSection("Header", required: false)
+    </div>
+
+    <div>
+        @RenderBody()
+    </div>
+
+    <div class="footer-container" style="text-align: center; /* Выравнивание по центру */
+    padding: 20px; /* Внутренний отступ */
+    color: #474A51; /* Серый цвет текста */
+    font-family: 'Times New Roman', serif; /* Шрифт */
+    font-size: 25px; /* Увеличенный размер текста */
+    background: linear-gradient(to right, #FF8C69, #474A51); /* Градиент рыжий-серый */
+    position: fixed; /* Фиксированная позиция */
+    width: 100%; /* Ширина на всю страницу */
+    z-index: 999; /* Зависит над остальным контентом */">
+        @RenderSection("Footer", required: false)
+    </div>
+
+</body>
+</html>

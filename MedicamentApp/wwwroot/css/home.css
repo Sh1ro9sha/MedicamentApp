@@ -1,0 +1,94 @@
+﻿/* Основные стили для страницы */
+body {
+    font-family: 'Times New Roman', serif;
+    background-image: url("/images/back.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: #222;
+}
+/* Стили для хедера и футера */
+.header-container, .footer-container {
+    text-align: center; /* Выравнивание по центру */
+    padding: 20px; /* Внутренний отступ */
+    color: #474A51; /* Серый цвет текста */
+    font-family: 'Times New Roman', serif; /* Шрифт */
+    font-size: 25px; /* Увеличенный размер текста */
+    background: linear-gradient(to right, #FF8C69, #474A51); /* Градиент рыжий-серый */
+    position: fixed; /* Фиксированная позиция */
+    width: 100%; /* Ширина на всю страницу */
+    z-index: 999; /* Зависит над остальным контентом */
+}
+
+.header-container {
+    top: 0; /* Позиция сверху */
+}
+
+.footer-container {
+    bottom: 0; /* Позиция внизу */
+}
+
+/* Стили для контейнера текста */
+.text-container {
+    width: 50%;
+    background: rgba(255, 255, 255, 0.8);
+    color: #222;
+    font-size: 20px;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Стили для заголовка */
+h1 {
+    color: #FF8C69; /* Темно-красный цвет текста */
+    font-size: 32px; /* Увеличенный размер текста */
+    text-align: center; /* Центрирование текста */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+/* Стили для ссылок-кнопок */
+a {
+    font-size: 18px;
+    display: inline-block;
+    padding: 10px 20px; /* Задаем отступы */
+    border-radius: 5px; /* Менее округлые кнопки */
+    background-color: #FF8C69;
+    text-decoration: none; /* Убираем подчеркивание */
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Плавное изменение цвета */
+    margin: 10px; /* Добавляем отступы */
+    font-style: italic;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #474A51; /* Темный серый цвет текста кнопок */
+}
+
+    a:hover {
+        background-color: #474A51; /* Серый цвет фона при наведении */
+        color: #FF8C69; /* Белый цвет текста при наведении */
+    }
+
+    a:active {
+        transform: translateY(-48%); /* Создаем эффект нажатия */
+    }
+
+    a.login {
+        left: 10%; /* Размещение кнопки Войти слева */
+    }
+
+    a.register {
+        right: 10%; /* Размещение кнопки Зарегистрироваться справа */
+    }

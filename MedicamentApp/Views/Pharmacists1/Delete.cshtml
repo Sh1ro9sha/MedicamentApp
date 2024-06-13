@@ -1,0 +1,125 @@
+﻿@model MedicamentApp.Models.Pharmacists
+@{
+    Layout = "_LayoutEmpty";
+    ViewData["Title"] = "Delete";
+}
+
+<style>
+    body {
+        background-color: #FAF3E0; /* Оранжево-желтый пастельный */
+        color: #333; /* Основной цвет текста */
+        font-family: Arial, sans-serif;
+    }
+
+    h1, h3, h4 {
+        color: #FF9A76; /* Яркий оранжево-желтый для заголовков */
+        text-align: center; /* Центрирование заголовков */
+    }
+
+    a {
+        color: #5DADE2; /* Голубой для ссылок */
+    }
+
+    .btn {
+        font-size: 18px; /* Увеличенный размер текста */
+        padding: 10px 20px; /* Увеличенные внутренние отступы */
+        border-radius: 30px; /* Круглые границы */
+        border: none; /* Убираем границы */
+        color: #fff; /* Белый цвет текста */
+        text-decoration: none; /* Убираем подчеркивание */
+        display: inline-block; /* Inline block для правильного отображения */
+        transition: background-color 0.3s ease; /* Плавный переход цвета */
+    }
+
+    .btn-primary {
+        background-color: #5DADE2; /* Голубой для кнопок */
+    }
+
+        .btn-primary:hover {
+            background-color: #3498DB; /* Темный голубой при наведении */
+        }
+
+    .btn-secondary {
+        background-color: #FF9A76; /* Пастельный оранжевый для вторичных кнопок */
+    }
+
+        .btn-secondary:hover {
+            background-color: #FF7043; /* Темный оранжевый при наведении */
+        }
+
+    .btn-danger {
+        background-color: #F1948A; /* Пастельный красный для кнопок удаления */
+    }
+
+        .btn-danger:hover {
+            background-color: #E74C3C; /* Темный красный при наведении */
+        }
+
+    .delete-container {
+        max-width: 800px; /* Ограничиваем ширину */
+        margin: 0 auto; /* Центрируем контейнер */
+        background-color: #FFF; /* Белый фон для контейнера */
+        padding: 20px; /* Внутренние отступы */
+        border-radius: 8px; /* Скругленные углы */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Легкая тень */
+        text-align: center; /* Центрирование текста */
+    }
+
+    .row {
+        display: flex;
+        align-items: center; /* Вертикальное центрирование */
+        justify-content: center; /* Горизонтальное центрирование */
+        flex-wrap: wrap;
+    }
+
+    dt {
+        font-weight: bold; /* Жирный шрифт для заголовков */
+        margin-right: 10px; /* Отступ справа */
+    }
+
+    dd {
+        margin-bottom: 10px; /* Отступ снизу */
+    }
+
+    .actions {
+        margin-top: 20px; /* Отступ сверху */
+    }
+
+        .actions input, .actions a {
+            margin: 10px 20px; /* Горизонтальные и вертикальные отступы для кнопок */
+        }
+</style>
+
+<h1>Удаление</h1>
+
+<h3>Выберите строку для удаления</h3>
+<div>
+    <h4>Фармацевты</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ФИО)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ФИО)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Дата_приема)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Дата_приема)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Статус)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Статус)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Идентификатор" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-action="Index">Вернуться к списку</a>
+    </form>
+</div>

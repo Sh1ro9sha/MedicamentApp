@@ -1,0 +1,149 @@
+﻿@model IEnumerable<MedicamentApp.ViewModels.DeleteEmployeesViewModel>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Удаление сотрудников</title>
+    <style>
+        body {
+            font-family: 'Anonymous Pro', monospace;
+            background: linear-gradient(to bottom right, #30292f, #583b63, #7b4b8b);
+            margin: 0;
+            padding: 0;
+            color: #fff;
+        }
+
+        h2 {
+            text-align: center;
+            color: #7FC7FF;
+            margin-top: 0;
+        }
+
+        .table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #7FC7FF;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #fff;
+            text-align: center;
+        }
+
+        th {
+            background-color: #777;
+        }
+
+        td {
+            background-color: #999;
+        }
+
+            td:hover {
+                background-color: #CCC;
+            }
+
+        .no-products {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .no-points {
+            text-align: center;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        .return-button {
+            display: block;
+            width: 150px;
+            margin: 20px auto;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+            .return-button:hover {
+                background-color: #777;
+            }
+
+        .delete-button {
+            display: inline-block;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #7FC7FF;
+            color: #30292f;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+            .delete-button:hover {
+                background-color: #583b63;
+                color: #fff;
+            }
+
+        .btn.btn-secondary {
+            background-color: #6c757d;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+            margin-top: 5px;
+        }
+
+            .btn.btn-secondary:hover {
+                background-color: #495057;
+            }
+    </style>
+</head>
+<body>
+    <h2>Удаление сотрудников</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Идентификатор</th>
+                <th>ФИО</th>
+                <th>Должность</th>
+                <th>Код роли</th>
+                <th>Название роли</th>
+                <th>Действия</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var employee in Model)
+            {
+                <tr>
+                    <td>@employee.Идентификатор</td>
+                    <td>@employee.ФИО</td>
+                    <td>@employee.Должность</td>
+                    <td>@employee.Код_роли</td>
+                    <td>@employee.Название_роли</td>
+                    <td>
+                        <form asp-controller="DeleteEmployees" asp-action="Delete" method="post">
+                            <input type="hidden" name="id" value="@employee.Идентификатор" />
+                            <button type="submit" class="delete-button">Удалить</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/MenuPharmacists" class="btn-secondary">Вернуться в меню для фармацевтов</a>
+</body>
+</html>

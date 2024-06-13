@@ -1,0 +1,29 @@
+﻿﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="@Url.Content("~/css/home.css")">
+</head>
+<body style="height: 100vh; /* Высота контейнера */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;background-image: url('/images/back.jpg');font-family: 'Times New Roman', monospace;
+    position: relative;">
+    @section Header {
+        <h1>MedFarm</h1>
+    }
+    <a href="@Url.Action("Login", "Account")" class="login">Войти</a>
+    <a href="@Url.Action("Register", "Account")" class="register">Зарегистрироваться</a>
+
+    <div class="text-container">
+        <p>Приветствуем Вас на сайте «MedFarm»!</p>
+    </div>
+    @section Footer {
+        <div>&copy; Значит, доктор Хэнк считает дневник — лекарством от всех болезней.</div>
+    }
+</body>
+</html>

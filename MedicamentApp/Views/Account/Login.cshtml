@@ -1,0 +1,130 @@
+﻿@model MedicamentApp.ViewModels.LoginViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Авторизация</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            height: 100vh;
+            margin: 0;
+            background-image: url('images/1.jpg'); 
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: flex-start; 
+            align-items: center;
+        }
+
+        h2 {
+            color: #FF8C69; 
+            margin-bottom: 20px;
+            font-family: 'Arial Black', sans-serif;
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            margin: 40px;
+            display: flex;
+            flex-direction: column;
+        }
+
+            .login-container div {
+                margin-bottom: 20px;
+                width: 100%;
+            }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #FF8C69; 
+            font-weight: 500;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #FF8C69; 
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-top: 5px;
+        }
+
+        .button {
+            width: 100%;
+            padding: 15px;
+            background-color: #FF8C69;
+            border: none;
+            border-radius: 25px;
+            color: #FFF;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-family: 'Arial Black', sans-serif;
+        }
+
+            .button:hover {
+                background-color: #E07A57; 
+            }
+
+        .button-secondary {
+            margin-top: 10px;
+            background-color: #FF8C69; 
+            color: #FFF;
+            border-radius: 25px;
+            font-family: 'Arial Black', sans-serif;
+        }
+
+            .button-secondary:hover {
+                background-color: #E07A57; 
+            }
+
+        .validation-message {
+            color: #FF8C69; 
+            font-size: 12px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body style="height: 100vh; /* Высота контейнера */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;background-image: url('/images/1.jpg');font-family: 'Times New Roman', monospace;
+    position: relative;">
+    <div class="login-container">
+        <h2>Авторизация</h2>
+        <form method="post" asp-action="Login" asp-controller="Account" style="width: 100%;">
+            <div>
+                <label asp-for="Login">Введите логин:</label>
+                <input asp-for="Login" type="text" />
+                <span class="validation-message" asp-validation-for="Login"></span>
+            </div>
+            <div>
+                <label asp-for="Password">Введите пароль:</label>
+                <input asp-for="Password" type="password" />
+                <span class="validation-message" asp-validation-for="Password"></span>
+            </div>
+            <div>
+                <input type="submit" value="Войти" class="button" />
+            </div>
+        </form>
+    </div>
+
+    <div class="button-container" style="margin-top: 20px; width: 100%; display: flex; justify-content: flex-start; margin-left: 40px;">
+        <form method="get" action="/Home/Index" style="width: 100%; max-width: 400px;">
+            <button type="submit" class="button button-secondary" style="width: 100%;">Вернуться на главную страницу</button>
+        </form>
+    </div>
+</body>
+</html>

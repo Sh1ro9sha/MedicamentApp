@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Main Menu";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="@Url.Content("~/css/menu.css")">
+</head>
+<body>
+    <div class="menu-container">
+        <h1>Меню для фармацевтов</h1>
+        <p>Добро пожаловать! Выберите раздел для перехода:</p>
+        <div class="menu-links">
+            <a class="menu-link" href="@Url.Action("Index", "Home")">Главная</a>
+            <a class="menu-link" href="@Url.Action("Index", "Drug")">Перечень лекарств</a>
+            <a class="menu-link" href="@Url.Action("Index", "Drug1")">Редактирование информации о лекарствах</a>
+            <a class="menu-link" href="@Url.Action("Index", "Role")">Роли</a>
+            <a class="menu-link" href="@Url.Action("Index", "Users")">Пользователи</a>
+            <a class="menu-link" href="@Url.Action("Index", "Manufacturers")">Производители</a>
+            <a class="menu-link" href="@Url.Action("Index", "Profit")">Доходы</a>
+            <a class="menu-link" href="@Url.Action("Index", "Expenses")">Расходы</a>
+            <a class="menu-link" href="@Url.Action("Index", "Recipes")">Рецепты</a>
+            <a class="menu-link" href="@Url.Action("Index", "Recipes1")">Редактирование информации о рецептах</a>
+            <a class="menu-link" href="@Url.Action("Index", "Orders")">Заказы</a>
+            <a class="menu-link" href="@Url.Action("Index", "Employees")">Сотрудники</a>
+            <a class="menu-link" href="@Url.Action("Index", "Pharmacists")">Фармацевты</a>
+            <a class="menu-link" href="@Url.Action("Index", "Pharmacists1")">Редактирование информации о фармацевтах</a>
+            <a class="menu-link" href="@Url.Action("Index", "Clients")">Клиенты</a>
+            <a class="menu-link" href="@Url.Action("Index", "Clients1")">Редактирование информации о клиентах</a>
+            <a class="menu-link" href="@Url.Action("Index", "AddDrug")">Добавление лекарств</a>
+            <a class="menu-link" href="@Url.Action("Index", "AddManufacturers")">Добавление производителей</a>
+            <a class="menu-link" href="@Url.Action("Index", "AddProfit")">Добавление показателей доходов</a>
+            <a class="menu-link" href="@Url.Action("Index", "AddExpenses")">Добавление показателей расходов</a>
+            <a class="menu-link" href="@Url.Action("Index", "AddRecipes")">Добавление рецептов</a>
+            <a class="menu-link" href="@Url.Action("Index", "AddOrders")">Добавление заказов</a>
+            <a class="menu-link" href="@Url.Action("Index", "AddEmployees")">Добавление сотрудников</a>
+            <a class="menu-link" href="@Url.Action("Index", "AddPharmacists")">Добавление фармацевтов</a>
+            <a class="menu-link" href="@Url.Action("Index", "AddClients")">Добавление клиентов</a>
+            <a class="menu-link" href="@Url.Action("Index", "DeleteDrug")">Удаление лекарств</a>
+            <a class="menu-link" href="@Url.Action("Index", "DeleteManufacturers")">Удаление производителей</a>
+            <a class="menu-link" href="@Url.Action("Index", "DeleteProfit")">Удаление показателей доходов</a>
+            <a class="menu-link" href="@Url.Action("Index", "DeleteExpenses")">Удаление показателей расходов</a>
+            <a class="menu-link" href="@Url.Action("Index", "DeleteRecipes")">Удаление рецептов</a>
+            <a class="menu-link" href="@Url.Action("Index", "DeleteOrders")">Удаление заказов</a>
+            <a class="menu-link" href="@Url.Action("Index", "DeleteEmployees")">Удаление сотрудников</a>
+            <a class="menu-link" href="@Url.Action("Index", "DeletePharmacists")">Удаление фармацевтов</a>
+            <a class="menu-link" href="@Url.Action("Index", "DeleteClients")">Удаление клиентов</a>
+            
+        </div>
+    </div>
+</body>
+</html>

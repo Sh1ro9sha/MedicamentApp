@@ -1,0 +1,94 @@
+﻿@model IEnumerable<MedicamentApp.ViewModels.DeleteRecipesViewModel>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Удаление рецептов</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; 
+            color: #333; 
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            color: #333; 
+        }
+
+        .table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #fff; 
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            border: 1px solid #ddd; 
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-danger {
+            background-color: #dc3; 
+            color: #fff; 
+        }
+
+            .btn-danger:hover {
+                background-color: #233; 
+            }
+    </style>
+</head>
+<body>
+    <h1>Удаление рецептов</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Идентификатор</th>
+                <th>Дата назначения</th>
+                <th>Наименование лекарства</th>
+                <th>ФИО лечащего врача</th>
+                <th>Адрес больницы</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Идентификатор</td>
+                    <td>@item.Дата_назначения</td>
+                    <td>@item.Наименование_лекарства</td>
+                    <td>@item.ФИО_лечащего_врача</td>
+                    <td>@item.Адрес_больницы</td>
+                    <td>
+                        <form asp-action="Delete" method="post">
+                            <input type="hidden" name="id" value="@item.Идентификатор" />
+                            <button type="submit" class="btn btn-danger">Удалить</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/MenuPharmacists" class="btn-secondary">Вернуться в меню для фармацевтов</a>
+</body>
+</html>

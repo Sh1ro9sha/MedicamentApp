@@ -1,0 +1,88 @@
+﻿@model IEnumerable<MedicamentApp.Models.Manufacturers>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Производители</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background: linear-gradient(to bottom right, #fbc2eb, #a18cd1);
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            margin-top: 200px;
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .return-button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+            .return-button:hover {
+                background-color: #555;
+            }
+    </style>
+</head>
+<body>
+    <h2>Список производителей</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Идентификатор</th>
+                <th>Название</th>
+                <th>Адрес</th>
+                <th>Контактный телефон</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var manufacturer in Model)
+            {
+                <tr>
+                    <td>@manufacturer.Идентификатор</td>
+                    <td>@manufacturer.Название</td>
+                    <td>@manufacturer.Адрес</td>
+                    <td>@manufacturer.Контактный_телефон</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="button-container">
+        <form method="get" action="/Home/Index">
+            <button type="submit" class="return-button">Вернуться на главную</button>
+        </form>
+    </div>
+</body>
+</html>

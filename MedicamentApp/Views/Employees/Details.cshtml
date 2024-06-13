@@ -1,0 +1,132 @@
+﻿@model MedicamentApp.Models.Employees
+
+@{
+    Layout = "_LayoutEmpty";
+    ViewData["Title"] = "Details";
+}
+
+<style>
+    body {
+        background-color: #FAF3E0; /* Оранжево-желтый пастельный */
+        color: #333; /* Основной цвет текста */
+        font-family: Arial, sans-serif;
+    }
+
+    h1, h4 {
+        color: #FF9A76; /* Яркий оранжево-желтый для заголовков */
+        text-align: center; /* Центрирование заголовков */
+    }
+
+    a {
+        color: #5DADE2; /* Голубой для ссылок */
+    }
+
+    .btn {
+        font-size: 18px; /* Увеличенный размер текста */
+        padding: 10px 20px; /* Увеличенные внутренние отступы */
+        border-radius: 30px; /* Круглые границы */
+        border: none; /* Убираем границы */
+        color: #fff; /* Белый цвет текста */
+        text-decoration: none; /* Убираем подчеркивание */
+        display: inline-block; /* Inline block для правильного отображения */
+        transition: background-color 0.3s ease; /* Плавный переход цвета */
+        margin: 5px; /* Небольшие отступы между кнопками */
+    }
+
+    .btn-primary {
+        background-color: #5DADE2; /* Голубой для кнопок */
+    }
+
+        .btn-primary:hover {
+            background-color: #3498DB; /* Темный голубой при наведении */
+        }
+
+    .btn-secondary {
+        background-color: #FF9A76; /* Пастельный оранжевый для вторичных кнопок */
+    }
+
+        .btn-secondary:hover {
+            background-color: #FF7043; /* Темный оранжевый при наведении */
+        }
+
+    .btn-info {
+        background-color: #85C1E9; /* Пастельный голубой для информационных кнопок */
+    }
+
+        .btn-info:hover {
+            background-color: #3498DB; /* Темный голубой при наведении */
+        }
+
+    .btn-danger {
+        background-color: #F1948A; /* Пастельный красный для кнопок удаления */
+    }
+
+        .btn-danger:hover {
+            background-color: #E74C3C; /* Темный красный при наведении */
+        }
+
+    .details-container {
+        max-width: 800px; /* Ограничиваем ширину */
+        margin: 0 auto; /* Центрируем контейнер */
+        background-color: #FFF; /* Белый фон для контейнера */
+        padding: 20px; /* Внутренние отступы */
+        border-radius: 8px; /* Скругленные углы */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    }
+
+    dl.row {
+        background-color: #EDEDED; /* Более темный фон для таблицы */
+        border-radius: 8px; /* Скругленные углы */
+        padding: 20px; /* Внутренние отступы */
+    }
+
+    dt, dd {
+        width: 100%; /* Ширина 100% для вертикального расположения */
+        margin-bottom: 10px; /* Отступ снизу */
+    }
+
+    dt {
+        font-weight: bold; /* Жирный шрифт для заголовков */
+    }
+
+    .actions {
+        text-align: center; /* Центрирование кнопок */
+        margin-top: 20px; /* Отступ сверху */
+    }
+
+        .actions a {
+            margin: 10px 20px; /* Горизонтальные и вертикальные отступы для кнопок */
+        }
+</style>
+
+<div class="details-container">
+    <h1>Детали</h1>
+
+    <div>
+        <h4>Сотрудник</h4>
+        <hr />
+        <dl class="row">
+            <dt>
+                @Html.DisplayNameFor(model => model.ФИО)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ФИО)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Должность)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Должность)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Role.Код_роли)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Код_роли)
+            </dd>
+        </dl>
+    </div>
+    <div class="actions">
+        <a asp-action="Index" class="btn btn-primary">Вернуться к списку</a>
+    </div>
+</div>

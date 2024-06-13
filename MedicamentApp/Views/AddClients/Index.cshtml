@@ -1,0 +1,141 @@
+﻿@model MedicamentApp.ViewModels.AddClientsViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Добавить клиента</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('/images/2.jpg'); 
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h2 {
+            color: #FF8C69;
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: 'Arial Black', sans-serif;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 100%;
+        }
+
+            .form-container div {
+                margin-bottom: 15px;
+            }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .btn-primary {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: #AFDAFC;
+            color: #111;
+            cursor: pointer;
+            font-size: 16px;
+            font-family: 'Arial Black', sans-serif;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+            .btn-primary:hover {
+                background-color: #FF8C69;
+            }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+            text-align: center;
+            width: 100%;
+            font-family: 'Arial Black', sans-serif;
+            box-sizing: border-box;
+        }
+
+            .btn-secondary:hover {
+                background-color: #495057;
+            }
+
+        .validation-message {
+            color: #FF8C69;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Добавление клиентов</h2>
+        <form asp-action="Index" method="post">
+            <div>
+                <label asp-for="Идентификатор">Идентификатор</label>
+                <input asp-for="Идентификатор" />
+                <span class="validation-message" asp-validation-for="Идентификатор"></span>
+            </div>
+            <div>
+                <label asp-for="ФИО">ФИО</label>
+                <input asp-for="ФИО" />
+                <span class="validation-message" asp-validation-for="ФИО"></span>
+            </div>
+            <div>
+                <label asp-for="Дата_рождения">Дата рождения</label>
+                <input asp-for="Дата_рождения" type="date" />
+                <span class="validation-message" asp-validation-for="Дата_рождения"></span>
+            </div>
+            <div>
+                <label asp-for="Место_проживания">Место проживания</label>
+                <input asp-for="Место_проживания" />
+                <span class="validation-message" asp-validation-for="Место_проживания"></span>
+            </div>
+            <div>
+                <label asp-for="СНИЛС">СНИЛС</label>
+                <input asp-for="СНИЛС" />
+                <span class="validation-message" asp-validation-for="СНИЛС"></span>
+            </div>
+            <div>
+                <label asp-for="Полис">Полис</label>
+                <input asp-for="Полис" />
+                <span class="validation-message" asp-validation-for="Полис"></span>
+            </div>
+            <button type="submit" class="btn-primary">Добавить</button>
+        </form>
+        <a href="/MenuPharmacists" class="btn-secondary">Вернуться в меню для фармацевтов</a>
+    </div>
+</body>
+</html>

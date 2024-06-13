@@ -1,0 +1,136 @@
+﻿@model MedicamentApp.ViewModels.AddProfitViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавить прибыль</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/images/7.jpg'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: #FFD700; 
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h2 {
+            color: #FF6347; 
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold; 
+        }
+
+        form {
+            background-color: #FF6347; 
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #FFD700; 
+            font-weight: bold; 
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="datetime-local"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #FFD700; 
+            border-radius: 8px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+            background-color: #FFA500; 
+            color: #3D315B;
+            font-size: 18px; 
+            font-weight: bold; 
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background-color: #FFD700; 
+            color: #3D315B; 
+            cursor: pointer;
+            font-size: 20px; 
+            font-weight: bold; 
+            transition: background-color 0.3s ease;
+        }
+
+            button[type="submit"]:hover {
+                background-color: #FFA500; 
+            }
+
+        .btn-secondary {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #FFD700; 
+            text-decoration: none;
+            font-size: 20px; 
+            font-weight: bold; 
+            background-color: #00BFFF; 
+            padding: 15px 30px; 
+            border-radius: 8px; 
+            transition: background-color 0.3s ease;
+        }
+
+            .btn-secondary:hover {
+                background-color: #1E90FF;
+            }
+    </style>
+</head>
+<body>
+    <h2>Добавление прибыли</h2>
+    <form asp-action="Index" method="post">
+        <div>
+            <label asp-for="Идентификатор">Идентификатор</label>
+            <input asp-for="Идентификатор" />
+            <span asp-validation-for="Идентификатор"></span>
+        </div>
+        <div>
+            <label asp-for="Идентификатор_лекарства">
+                Идентификатор лекарства
+            </label>
+            <input asp-for="Идентификатор_лекарства" />
+            <span asp-validation-for="Идентификатор_лекарства"></span>
+        </div>
+        <div>
+            <label asp-for="Дата_поступления">Дата поступления</label>
+            <input asp-for="Дата_поступления" type="datetime-local" />
+            <span asp-validation-for="Дата_поступления"></span>
+        </div>
+        <div>
+            <label asp-for="Количество">Количество</label>
+            <input asp-for="Количество" />
+            <span asp-validation-for="Количество"></span>
+        </div>
+        <div>
+            <label asp-for="Поставщик">Поставщик</label>
+            <input asp-for="Поставщик" />
+            <span asp-validation-for="Поставщик"></span>
+        </div>
+        <div>
+            <label asp-for="Цена_закупки">Цена закупки</label>
+            <input asp-for="Цена_закупки" />
+            <span asp-validation-for="Цена_закупки"></span>
+        </div>
+        <button type="submit">Добавить</button>
+    </form>
+    <a href="/MenuPharmacists" class="btn-secondary">Вернуться в меню для фармацевтов</a>
+</body>
+</html>

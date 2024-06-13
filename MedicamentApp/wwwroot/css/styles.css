@@ -1,0 +1,20 @@
+﻿/* Стили для хедера и футера */
+.header-container, .footer-container {
+    text-align: center; /* Выравнивание по центру */
+    padding: 20px; /* Внутренний отступ */
+    color: #474A51; /* Серый цвет текста */
+    font-family: 'Times New Roman', serif; /* Шрифт */
+    font-size: 25px; /* Увеличенный размер текста */
+    background: linear-gradient(to right, #FF8C69, #474A51); /* Градиент рыжий-серый */
+    position: fixed; /* Фиксированная позиция */
+    width: 100%; /* Ширина на всю страницу */
+    z-index: 999; /* Зависит над остальным контентом */
+}
+
+.header-container {
+    top: 0; /* Позиция сверху */
+}
+
+.footer-container {
+    bottom: 0; /* Позиция внизу */
+}

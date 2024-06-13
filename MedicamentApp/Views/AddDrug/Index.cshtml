@@ -1,0 +1,138 @@
+﻿@model MedicamentApp.ViewModels.AddDrugViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавить препарат</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('/images/background.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h2 {
+            color: #4CAF50;
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: 'Arial Black', sans-serif;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 100%;
+        }
+
+            .form-container div {
+                margin-bottom: 15px;
+            }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="date"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .btn-primary {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            font-family: 'Arial Black', sans-serif;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+            .btn-primary:hover {
+                background-color: #45A049;
+            }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+            text-align: center;
+            width: 100%;
+            font-family: 'Arial Black', sans-serif;
+            box-sizing: border-box;
+        }
+
+            .btn-secondary:hover {
+                background-color: #495057;
+            }
+
+        .validation-message {
+            color: #4CAF50;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+            </style>
+</head>
+<body>
+    <h2>Добавление лекарственных препаратов</h2>
+    <form asp-action="AddDrug" method="post">
+        <div>
+            <label asp-for="Идентификатор"></label>
+            <input asp-for="Идентификатор" />
+            <span asp-validation-for="Идентификатор"></span>
+        </div>
+        <div>
+            <label asp-for="Наименование"></label>
+            <input asp-for="Наименование" />
+            <span asp-validation-for="Наименование"></span>
+        </div>
+        <div>
+            <label asp-for="Аннотация"></label>
+            <input asp-for="Аннотация" />
+            <span asp-validation-for="Аннотация"></span>
+        </div>
+        <div>
+            <label asp-for="Идентификатор_производителя"></label>
+            <input asp-for="Идентификатор_производителя" />
+            <span asp-validation-for="Идентификатор_производителя"></span>
+        </div>
+        <div>
+            <label asp-for="Единица_измерения"></label>
+            <input asp-for="Единица_измерения" />
+            <span asp-validation-for="Единица_измерения"></span>
+        </div>
+        <div>
+            <label asp-for="Место_хранения"></label>
+            <input asp-for="Место_хранения" />
+            <span asp-validation-for="Место_хранения"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Добавить</button>
+    </form>
+    <a href="/MenuPharmacists" class="btn-secondary">Вернуться в меню для фармацевтов</a>
+</body>
+</html>

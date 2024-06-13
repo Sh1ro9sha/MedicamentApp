@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Main Menu";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="@Url.Content("~/css/menu.css")">
+</head>
+<body>
+    <div class="menu-container">
+        <h1>Главное Меню</h1>
+        <p>Добро пожаловать! Выберите раздел для перехода:</p>
+        <div class="menu-links">
+            <a class="menu-link" href="@Url.Action("Index", "Home")">Главная</a>
+            <a class="menu-link" href="@Url.Action("Index", "Drug")">Перечень лекарств</a>
+            <a class="menu-link" href="@Url.Action("Index", "Role")">Роли</a>
+            <a class="menu-link" href="@Url.Action("Index", "Users")">Пользователи</a>
+            <a class="menu-link" href="@Url.Action("Index", "Manufacturers")">Производители</a>
+            <a class="menu-link" href="@Url.Action("Index", "Profit")">Доходы</a>
+            <a class="menu-link" href="@Url.Action("Index", "Expenses")">Расходы</a>
+            <a class="menu-link" href="@Url.Action("Index", "Recipes")">Рецепты</a>
+            <a class="menu-link" href="@Url.Action("Index", "Orders")">Заказы</a>
+            <a class="menu-link" href="@Url.Action("Index", "Employees")">Сотрудники</a>
+            <a class="menu-link" href="@Url.Action("Index", "Pharmacists")">Фармацевты</a>
+            <a class="menu-link" href="@Url.Action("Index", "Clients")">Клиенты</a>
+        </div>
+    </div>
+</body>
+</html>

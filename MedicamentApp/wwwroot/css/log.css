@@ -1,0 +1,88 @@
+﻿body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    height: 100vh;
+    margin: 0;
+    background-image: url('images/1.jpg'); /* Путь к вашей картинке */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: flex-start; /* Изменено для размещения формы не по центру */
+    align-items: center;
+}
+
+h2 {
+    color: #FF8C69; /* Оранжево-красный цвет */
+    margin-bottom: 20px;
+    font-family: 'Arial Black', sans-serif;
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+    .login-container div {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #FF8C69; /* Оранжево-красный цвет */
+    font-weight: 500;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #FF8C69; /* Оранжево-красная граница */
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+.button {
+    width: 100%;
+    padding: 15px;
+    background-color: #FF8C69; /* Оранжево-красный цвет */
+    border: none;
+    border-radius: 25px;
+    color: #FFF;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial Black', sans-serif;
+}
+
+    .button:hover {
+        background-color: #E07A57; /* Темнее оранжево-красный */
+    }
+
+.button-secondary {
+    margin-top: 10px;
+    background-color: #FF8C69; /* Оранжево-красный цвет */
+    color: #FFF;
+    border-radius: 25px;
+    font-family: 'Arial Black', sans-serif;
+}
+
+    .button-secondary:hover {
+        background-color: #E07A57; /* Темнее оранжево-красный */
+    }
+
+.validation-message {
+    color: #FF8C69; /* Оранжево-красный цвет */
+    font-size: 12px;
+    margin-top: 5px;
+}

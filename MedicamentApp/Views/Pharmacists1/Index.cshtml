@@ -1,0 +1,169 @@
+﻿@model IEnumerable<MedicamentApp.Models.Pharmacists>
+
+@{
+    Layout = "_LayoutEmpty";
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    body {
+        background-color: #FAF3E0; /* Оранжево-желтый пастельный */
+        color: #333; /* Основной цвет текста */
+        font-family: Arial, sans-serif;
+    }
+
+    h1, h4 {
+        color: #FF9A76; /* Яркий оранжево-желтый для заголовков */
+        text-align: center; /* Центрирование заголовков */
+    }
+
+    a {
+        color: #5DADE2; /* Голубой для ссылок */
+    }
+
+    .btn {
+        font-size: 18px; /* Увеличенный размер текста */
+        padding: 10px 20px; /* Увеличенные внутренние отступы */
+        border-radius: 30px; /* Круглые границы */
+        border: none; /* Убираем границы */
+        color: #fff; /* Белый цвет текста */
+        text-decoration: none; /* Убираем подчеркивание */
+        display: inline-block; /* Inline block для правильного отображения */
+        transition: background-color 0.3s ease; /* Плавный переход цвета */
+        margin: 5px; /* Небольшие отступы между кнопками */
+    }
+
+    .btn-primary {
+        background-color: #5DADE2; /* Голубой для кнопок */
+    }
+
+        .btn-primary:hover {
+            background-color: #3498DB; /* Темный голубой при наведении */
+        }
+
+    .btn-secondary {
+        background-color: #FF9A76; /* Пастельный оранжевый для вторичных кнопок */
+    }
+
+        .btn-secondary:hover {
+            background-color: #FF7043; /* Темный оранжевый при наведении */
+        }
+
+    .btn-danger {
+        background-color: #F1948A; /* Пастельный красный для кнопок удаления */
+    }
+
+        .btn-danger:hover {
+            background-color: #E74C3C; /* Темный красный при наведении */
+        }
+
+    .table-container {
+        display: flex;
+        justify-content: center; /* Центрирование таблицы */
+    }
+
+    .table {
+        background-color: #FFF; /* Белый фон для таблиц */
+        border-collapse: collapse; /* Убираем двойные границы */
+        width: 80%; /* Ширина таблицы */
+        margin-top: 20px; /* Отступ сверху */
+    }
+
+        .table th, .table td {
+            border: 1px solid #ddd; /* Границы ячеек таблицы */
+            padding: 8px; /* Отступы внутри ячеек */
+            text-align: left; /* Выравнивание текста влево */
+        }
+
+        .table th {
+            background-color: #FFECB3; /* Светло-оранжевый для заголовков таблиц */
+            color: #333; /* Цвет текста в заголовках */
+        }
+
+        .table td {
+            background-color: #FFF5E1; /* Светло-оранжевый для строк таблиц */
+            color: #333; /* Цвет текста в строках */
+        }
+
+        .table tr:nth-child(even) {
+            background-color: #f2f2f2; /* Цвет фона для чётных строк */
+        }
+
+        .table tr:hover {
+            background-color: #ddd; /* Цвет фона при наведении на строку */
+        }
+
+    .action-links a {
+        margin: 0 5px; /* Горизонтальные отступы для ссылок */
+        font-size: 16px; /* Размер текста ссылок */
+        padding: 6px 12px; /* Внутренние отступы для ссылок */
+        border-radius: 25px; /* Круглые границы */
+        border: none; /* Убираем границы */
+        color: #fff; /* Белый цвет текста */
+        text-decoration: none; /* Убираем подчеркивание */
+        display: inline-block; /* Inline block для правильного отображения */
+        transition: background-color 0.3s ease; /* Плавный переход цвета */
+    }
+
+    .action-links .details {
+        background-color: #5DADE2; /* Голубой для деталей */
+    }
+
+        .action-links .details:hover {
+            background-color: #3498DB; /* Темный голубой при наведении */
+        }
+
+    .action-links .delete {
+        background-color: #F1948A; /* Пастельный красный для удаления */
+    }
+
+        .action-links .delete:hover {
+            background-color: #E74C3C; /* Темный красный при наведении */
+        }
+</style>
+<h1>ИНФОРМАЦИЯ О ФАРМАЦЕВТАХ</h1>
+
+<p>
+    <a asp-action="Create">Добавить фармацевта</a>
+</p>
+<div class="table-container">
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ФИО)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Дата_приема)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Статус)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ФИО)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Дата_приема)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Статус)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Идентификатор">Редактирование</a> |
+                <a asp-action="Details" asp-route-id="@item.Идентификатор">Детали</a> |
+                <a asp-action="Delete" asp-route-id="@item.Идентификатор">Удаление</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>
+<p>
+    <a href="/MenuPharmacists" class="btn btn-secondary">Вернуться в меню</a>
+</p>
